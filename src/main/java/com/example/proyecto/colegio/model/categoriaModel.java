@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
+import java.sql.Date;
 import java.util.Set;
 
 @Entity(name = "categoria")
@@ -16,9 +17,11 @@ public class categoriaModel {
     private int idCategoria;
     @Column(length = 120, name = "nombre_categoria")
     private String nombreCategoria;
+    @Column(name = "fecha_creacion")
+    private Date fechaCreacion;
 
-    @ToString.Exclude
-    @EqualsAndHashCode.Exclude
+    @ToString.Exclude// evita recursividad
+    @EqualsAndHashCode.Exclude//evita recursividad
     @OneToMany(
             cascade = CascadeType.ALL,
             fetch = FetchType.EAGER,

@@ -11,17 +11,22 @@ import java.sql.Date;
 public class cursoModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_curso")
+    @Column(name = "id_curso", length = 11)
     private Long idCurso;
+    @Column(length = 60)
     private String titulo;
+    @Column(length = 100)
     private String subtitulo;
+    @Column(length = 255)
     private String descripcion;
+    @Column(length = 255)
     private String imagen;
+    @Column(length = 255)
     private String video;
     @Column(name = "horas_video")
-    private String horaVideos;
+    private int horaVideos;
     @Column(name = "cantidad_curso")
-    private String cantidadCursos;
+    private int cantidadCursos;
     private float precio;
     @Enumerated(EnumType.STRING)
     private certificado certificados;

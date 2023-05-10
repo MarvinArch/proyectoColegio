@@ -8,7 +8,7 @@ import lombok.Data;
 public class nivelesModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "nivel_id")
+    @Column(name = "nivel_id", length = 11)
     private int idNivel;
     @Column(length = 45)
     private String tipo;

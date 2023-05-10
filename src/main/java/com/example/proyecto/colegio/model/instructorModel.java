@@ -13,15 +13,23 @@ import java.util.Set;
 public class instructorModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "intructor_id")
+    @Column(name = "intructor_id", length = 11)
     private int idInstructor;
+    @Column(length = 120)
     private String nombres;
+    @Column(length = 120)
     private String apellidos;
+    @Column(length = 11)
     private int identificacion;
+    @Column(length = 120)
     private String ciudad;
+    @Column(length = 120)
     private String pais;
+    @Column(length = 255)
     private String direccion;
+    @Column(length = 11)
     private int telefono;
+    @Column(length = 100)
     private String email;
     private Date fechaCreacion;
     @ToString.Exclude
