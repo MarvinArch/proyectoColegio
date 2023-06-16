@@ -1,1 +1,1 @@
-agragando readme proyecto 50%
+agregando readme proyecto 50%
