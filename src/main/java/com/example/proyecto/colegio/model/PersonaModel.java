@@ -30,6 +30,8 @@ public class PersonaModel {
     private String contraseña;
     @Column(nullable = false)
     private boolean profesor;
+
+    private String foto;
     @JsonIgnore
     @ToString.Exclude
     @EqualsAndHashCode.Exclude

@@ -16,12 +16,16 @@ public class GradoModel {
     private Long idGrado;
     private String nombreGrado;
 
-    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "encargado")
     private ProfesorModel encargado;
-    @JsonIgnore
-    @ToString.Exclude// evita recursividad
-    @EqualsAndHashCode.Exclude//evita recursividad
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "gradoCurso")
-    private List<CursoModel> cursosGrado;
+
+    public GradoModel(Long idGrado, String nombreGrado, ProfesorModel encargado) {
+        this.idGrado = idGrado;
+        this.nombreGrado = nombreGrado;
+        this.encargado = encargado;
+    }
+
+    public GradoModel() {
+    }
 }

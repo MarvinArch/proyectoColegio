@@ -14,11 +14,10 @@ public class ProfesorDTO {
     private PersonaModel datosGenerales;
     private List<CursoModel> profesorCurso;
 
-    public ProfesorDTO(Long identificacion, String noCuenta, String profesion, PersonaModel datosGenerales, List<CursoModel> profesorCurso) {
+    public ProfesorDTO(Long identificacion, String noCuenta, String profesion, PersonaModel datosGenerales) {
         this.identificacion = identificacion;
         this.noCuenta = noCuenta;
         this.profesion = profesion;
         this.datosGenerales = datosGenerales;
-        this.profesorCurso = profesorCurso;
     }
 }

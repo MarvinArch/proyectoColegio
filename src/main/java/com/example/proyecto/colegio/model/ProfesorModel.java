@@ -22,17 +22,9 @@ public class ProfesorModel {
     @EqualsAndHashCode.Exclude//evita recursividad
     @OneToOne(cascade = CascadeType.ALL,
             fetch = FetchType.EAGER)
-    @JoinColumn(name = "datos_generales")
+    @JoinColumn(name = "datos_generales", nullable = true)
     private PersonaModel datosGenerales;
-    @JsonIgnore
-    @ToString.Exclude// evita recursividad
-    @EqualsAndHashCode.Exclude//evita recursividad
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "profesorCurso")
-    private List<CursoModel> profesorCurso;
 
-    @JsonIgnore
-    @ToString.Exclude
-    @EqualsAndHashCode.Exclude
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "profesorPost")
-    private List<PostModel> PostsProfesor;
+
+
 }

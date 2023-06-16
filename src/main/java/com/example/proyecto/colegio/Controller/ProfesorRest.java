@@ -28,7 +28,7 @@ public class ProfesorRest {
         Optional<ProfesorModel> buscar= service.getById(id);
         if (buscar.isPresent()) {
             ProfesorDTO profesorDTO = new ProfesorDTO(buscar.get().getIdentificacion(),buscar.get().getNoCuenta(), buscar.get().getProfesion()
-            , buscar.get().getDatosGenerales(), buscar.get().getProfesorCurso());
+            , buscar.get().getDatosGenerales());
             return profesorDTO;
         }
         return null;

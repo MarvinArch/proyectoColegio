@@ -1,7 +1,10 @@
 package com.example.proyecto.colegio.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
 import org.hibernate.engine.internal.Cascade;
 
 @Entity(name = "asignacion")
@@ -20,7 +23,7 @@ public class AsignacionModel {
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "curso_asignado")
     private CursoModel cursoAsignado;
-
+    @JsonIgnore
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "alumno_asignado")
     private AlumnoModel alumnoAsignado;

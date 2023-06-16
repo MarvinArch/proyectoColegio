@@ -1,7 +1,10 @@
 package com.example.proyecto.colegio.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
 
 import java.sql.Time;
 import java.util.List;
@@ -20,7 +23,7 @@ public class CursoModel {
     private Time horaInicio;
     @Column()
     private String seccion;
-
+    @JsonIgnore
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "grado_curso")
     private GradoModel gradoCurso;
@@ -29,7 +32,5 @@ public class CursoModel {
     @JoinColumn(name = "profesor_curso")
     private ProfesorModel profesorCurso;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "cursoAsignado")
-    private List<AsignacionModel> asignaciones;
 
 }

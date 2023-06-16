@@ -3,6 +3,8 @@ package com.example.proyecto.colegio.model;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
 
 import java.sql.Date;
 import java.util.List;
@@ -23,7 +25,8 @@ public class AlumnoModel {
     fetch = FetchType.EAGER)
     @JoinColumn(name = "datos_generales")
     private PersonaModel datosGenerales;
-    @JsonIgnore
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "alumnoAsignado")
-    private List<AsignacionModel> alumnosAsignados;
+
+    @ManyToOne()
+    @JoinColumn(name = "GradoAlumno")
+    private GradoModel gradoAlumno;
 }
