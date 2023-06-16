@@ -5,9 +5,7 @@
 
 
 
-**Table of Contents**
 
-[[_TOC_]]
 
 # H1 API end points
 ## Degree
