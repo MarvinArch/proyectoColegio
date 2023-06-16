@@ -11,7 +11,7 @@
 
 [TOC]
 
-#H1 API end points
+# H1 API end points
 ## Degree
 ### get degree
 
@@ -20,10 +20,11 @@
 	 curl -X 'GET' \
 	http://localhost:8080/grado \
 
-###post degree
+### post degree
 > https://localhost:8080/grado
 
-####Request body
+#### Request body
+
 	{
 		"id": 0
 		"nombre grado": "string"
